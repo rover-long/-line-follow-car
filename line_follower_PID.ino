@@ -27,7 +27,7 @@ void setup() {
   pinMode(IN2, OUTPUT);
   pinMode(IN3, OUTPUT);
   pinMode(IN4, OUTPUT);
-  Serial.begin(9600); // 用于调试，可选
+  Serial.begin(9600); 
 }
 
 void loop() {
@@ -51,25 +51,25 @@ void loop() {
   leftSpeed = constrain(leftSpeed, 0, maxSpeed);
   rightSpeed = constrain(rightSpeed, 0, maxSpeed);
 
-  // 特殊情况处理（类似原代码的逻辑）
-  if (leftValue > 750 && rightValue > 750) { // 两侧都检测到白线
+  
+  if (leftValue > 750 && rightValue > 750) { 
     back();
     delay(50);
   } else {
-    moveMotors(leftSpeed, rightSpeed); // 正常PID控制
+    moveMotors(leftSpeed, rightSpeed); 
   }
 
   // 更新上一次误差
   previousError = error;
 
-  // 调试输出（可选）
+
   Serial.print("Left: "); Serial.print(leftValue);
   Serial.print(" Right: "); Serial.print(rightValue);
   Serial.print(" Error: "); Serial.print(error);
   Serial.print(" LeftSpeed: "); Serial.print(leftSpeed);
   Serial.print(" RightSpeed: "); Serial.println(rightSpeed);
 
-  delay(50); // 控制循环频率
+  delay(50); 
 }
 
 void moveMotors(int leftSpeed, int rightSpeed) {
