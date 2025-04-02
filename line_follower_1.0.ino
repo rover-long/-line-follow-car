@@ -52,7 +52,7 @@ void forward() {
 
 void turnleft() {
   digitalWrite(IN1, LOW);
-  analogWrite(IN2, 150);  // 转弯速度从 250 降低到 150
+  analogWrite(IN2, 150);  
   analogWrite(IN3, 0);
   digitalWrite(IN4, LOW); 
 }
@@ -60,7 +60,7 @@ void turnleft() {
 void turnright() {
   digitalWrite(IN1, LOW);
   analogWrite(IN2, 0);
-  analogWrite(IN3, 150);  // 转弯速度从 250 降低到 150
+  analogWrite(IN3, 150);  
   digitalWrite(IN4, LOW);  
 }
 
